@@ -1,0 +1,1870 @@
+<style>
+
+/* == WEB FONT IMPORT == */
+@font-face {
+  font-family: 'Overpass';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/overpass/v12/qFdU35WCmI96Ajtm81GgSdXCNs-VMF0vNLADepqP.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Overpass';
+  font-style: italic;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/overpass/v12/qFdU35WCmI96Ajtm81GgSdXCNs-VMF0vNLDkfZqP.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Overpass';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/overpass/v12/qFda35WCmI96Ajtm83upeyoaX6QPnlo6_PPrOQ.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Overpass';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/overpass/v12/qFda35WCmI96Ajtm83upeyoaX6QPnlo6G_TrOQ.ttf) format('truetype');
+}
+/* == General Styles == */
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+html {
+  background: #EBAD1A;
+}
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: 'Overpass', sans-serif;
+  font-size: 16px;
+  line-height: 1.43;
+  background: #F2F8FF;
+}
+a,
+.trans {
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -ms-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  text-decoration: none;
+}
+.balls {
+  z-index: 1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+#ball1 {
+  display: block;
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  background-color: #C93E4E;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  animation: top 9.522s linear 0s infinite alternate, left 6.45s linear 0s infinite alternate;
+}
+@media only screen and (max-width: 768px) {
+  #ball1 {
+    width: 60px;
+    height: 60px;
+  }
+}
+@keyframes left {
+  from {
+    left: 0;
+  }
+  to {
+    left: 100%;
+  }
+}
+@keyframes top {
+  from {
+    top: 0;
+  }
+  to {
+    top: 100%;
+  }
+}
+#ball2 {
+  display: block;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-color: #EBAD1A;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  animation: top2 7.522s linear 0s infinite alternate, left2 4.45s linear 0s infinite alternate;
+}
+@media only screen and (max-width: 768px) {
+  #ball2 {
+    width: 40px;
+    height: 40px;
+  }
+}
+@keyframes left2 {
+  from {
+    left: 0;
+  }
+  to {
+    left: 100%;
+  }
+}
+@keyframes top2 {
+  from {
+    top: 0;
+  }
+  to {
+    top: 100%;
+  }
+}
+#ball3 {
+  display: block;
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  background-color: #58ACD4;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  animation: top 9.522s linear 0s infinite alternate, left 6.45s linear 0s infinite alternate;
+}
+@media only screen and (max-width: 768px) {
+  #ball3 {
+    width: 70px;
+    height: 70px;
+  }
+}
+@keyframes left {
+  from {
+    left: 0;
+  }
+  to {
+    left: 100%;
+  }
+}
+@keyframes top {
+  from {
+    top: 0;
+  }
+  to {
+    top: 100%;
+  }
+}
+#ball4 {
+  display: block;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background-color: #6EA689;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  animation: top2 7.522s linear 0s infinite alternate, left2 4.45s linear 0s infinite alternate;
+}
+@media only screen and (max-width: 768px) {
+  #ball4 {
+    width: 40px;
+    height: 40px;
+  }
+}
+@keyframes left2 {
+  from {
+    left: 0;
+  }
+  to {
+    left: 100%;
+  }
+}
+@keyframes top2 {
+  from {
+    top: 0;
+  }
+  to {
+    top: 100%;
+  }
+}
+.valuation-button {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  border-radius: 10px 10px 0 0;
+  background: #EBAD1A;
+  z-index: 30;
+  padding: 15px;
+  color: #FFFFFF;
+  text-align: center;
+  font-weight: 700;
+  font-size: 18px;
+}
+@media only screen and (max-width: 1024px) {
+  .valuation-button {
+    display: block;
+  }
+}
+header {
+  z-index: 10;
+  position: relative;
+}
+header .rainbow {
+  width: 100%;
+  height: 7px;
+  display: flex;
+}
+header .rainbow div {
+  width: 25%;
+  height: 100%;
+}
+header .rainbow-blue {
+  background: #58ACD4;
+}
+header .rainbow-yellow {
+  background: #EBAD1A;
+}
+header .rainbow-red {
+  background: #C93E4E;
+}
+header .rainbow-green {
+  background: #6EA689;
+}
+header .header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  background: #0F100E;
+}
+@media only screen and (max-width: 768px) {
+  header .header {
+    padding: 10px;
+  }
+}
+header .header .logo img {
+  width: 160px;
+  height: auto;
+}
+@media only screen and (max-width: 768px) {
+  header .header .logo img {
+    width: 120px;
+  }
+}
+header .header .phone a {
+  color: #EBAD1A;
+  font-size: 18px;
+}
+header .header .phone a span {
+  color: #FFFFFF;
+  display: inline-block;
+  margin-right: 2px;
+}
+@media only screen and (max-width: 768px) {
+  header .header .phone a span.hide-mob {
+    display: none;
+  }
+}
+header .header .phone a:hover {
+  text-decoration: underline;
+}
+header .header .phone a:hover span {
+  text-decoration: none !important;
+}
+.hero {
+  z-index: 10;
+  position: relative;
+}
+.trusted-slider {
+  display: flex;
+  padding: 10px 40px;
+  align-items: center;
+  z-index: 10;
+  position: relative;
+  background: #FFFFFF;
+}
+@media only screen and (max-width: 768px) {
+  .trusted-slider {
+    padding: 10px;
+    flex-wrap: wrap;
+  }
+}
+.trusted-slider--label {
+  margin-right: 60px;
+  font-size: 20px;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+.trusted-slider--label span {
+  color: #58ACD4;
+}
+@media only screen and (max-width: 768px) {
+  .trusted-slider--label {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 10px;
+    margin-right: 0;
+    font-size: 16px;
+  }
+}
+.trusted-slider--wrapper {
+  width: calc(100% - 160px);
+}
+@media only screen and (max-width: 768px) {
+  .trusted-slider--wrapper {
+    width: 100%;
+  }
+}
+.trusted-slider--slide {
+  text-align: center;
+}
+.trusted-slider--slide img {
+  height: 80px;
+  width: auto;
+  display: inline-block !important;
+}
+.partnered-slider {
+  display: flex;
+  padding: 10px 40px;
+  align-items: center;
+  z-index: 10;
+  position: relative;
+  background: #FFFFFF;
+}
+@media only screen and (max-width: 1024px) {
+  .partnered-slider {
+    padding: 10px;
+    flex-wrap: wrap;
+  }
+}
+.partnered-slider--label {
+  margin-right: 60px;
+  font-size: 20px;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+.partnered-slider--label span {
+  color: #58ACD4;
+}
+@media only screen and (max-width: 1024px) {
+  .partnered-slider--label {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 10px;
+    margin-right: 0;
+    font-size: 16px;
+  }
+}
+.partnered-slider--wrapper {
+  width: calc(54% - 160px);
+}
+@media only screen and (max-width: 1024px) {
+  .partnered-slider--wrapper {
+    width: 100%;
+  }
+}
+.partnered-slider--slide {
+  text-align: center;
+}
+.partnered-slider--slide img {
+  height: 80px;
+  width: auto;
+  display: inline-block !important;
+}
+.form {
+  position: absolute;
+  top: 250px;
+  width: 35%;
+  height: 100%;
+  right: 40px;
+  z-index: 20;
+}
+@media only screen and (max-width: 1024px) {
+  .form {
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    left: -100vw;
+    z-index: 100;
+    opacity: 0;
+    top: 0;
+    pointer-events: none;
+    transition: all 0.5s ease;
+  }
+}
+@media only screen and (max-width: 1024px) {
+  .form.open {
+    opacity: 1;
+    pointer-events: all;
+    left: 0;
+  }
+}
+.form .form-box {
+  width: 100%;
+  position: sticky;
+  background: #0F100E;
+  border-radius: 30px;
+  top: 40px;
+  color: #FFFFFF;
+  text-align: center;
+  overflow: hidden;
+}
+@media only screen and (max-width: 1024px) {
+  .form .form-box {
+    border-radius: 0;
+    height: 100vh;
+    top: 0;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .form .form-box p {
+    font-size: 14px;
+  }
+}
+.form .form-box .form-close {
+  display: none;
+  position: fixed;
+  top: 15px;
+  right: 15px;
+  z-index: 100;
+}
+@media only screen and (max-width: 1024px) {
+  .form .form-box .form-close {
+    display: block;
+  }
+}
+.form .form-box .form-close img {
+  width: 25px;
+  height: 25px;
+}
+.form #hw-total {
+  font-size: 50px;
+  color: #EBAD1A;
+  font-weight: 700;
+  margin: 60px 0;
+}
+.form .form-box-wrapper {
+  width: 500%;
+  flex-shrink: 0;
+  display: flex;
+  overflow: hidden;
+  transition: all 0.5s ease;
+}
+.form .form-box-inner {
+  position: relative;
+  padding: 30px 30px 120px;
+  width: 20%;
+}
+.form .form-box-inner input[type="text"],
+.form .form-box-inner input[type="phone"],
+.form .form-box-inner input[type="email"],
+.form .form-box-inner input[type="number"] {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.13);
+  border-radius: 5px;
+  color: #FFFFFF;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 15px 15px;
+  font-size: 16px;
+  font-family: 'Overpass', sans-serif;
+  margin-bottom: 10px;
+  -moz-appearance: textfield;
+  position: relative;
+}
+.form .form-box-inner input[type="text"]:focus,
+.form .form-box-inner input[type="phone"]:focus,
+.form .form-box-inner input[type="email"]:focus,
+.form .form-box-inner input[type="number"]:focus {
+  border: 1px solid #EBAD1A;
+  outline: none;
+}
+.form .form-box-inner input[type="text"]::placeholder,
+.form .form-box-inner input[type="phone"]::placeholder,
+.form .form-box-inner input[type="email"]::placeholder,
+.form .form-box-inner input[type="number"]::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+.form .form-box-inner select {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.13);
+  border-radius: 5px;
+  color: #FFFFFF;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 15px 15px;
+  font-size: 16px;
+  font-family: 'Overpass', sans-serif;
+  margin-bottom: 10px;
+  -moz-appearance: none;
+  /* Firefox */
+  -webkit-appearance: none;
+  /* Safari and Chrome */
+  appearance: none;
+  background-image: url(../img/arrow.svg);
+  background-size: 14px auto;
+  background-position: center right 12px;
+  background-repeat: no-repeat;
+}
+.form .form-box-inner select:focus {
+  border: 1px solid #EBAD1A;
+  outline: none;
+}
+.form .form-box-inner h3 {
+  width: 100%;
+  text-align: left;
+  font-size: 22px;
+}
+.form input::-webkit-outer-spin-button,
+.form input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.form .form-admin {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: absolute;
+  bottom: 50px;
+  width: calc(100% - 60px);
+}
+.form .form-admin .form-buttons {
+  display: flex;
+  align-items: center;
+}
+.form .form-admin .form-buttons .form-admin-skip {
+  display: inline-block;
+  padding: 10px 15px;
+  border-radius: 5px;
+  transition: all 0.5s ease;
+  cursor: pointer;
+}
+.form .form-admin .form-buttons .form-admin-skip:hover {
+  color: #58ACD4;
+}
+.form .form-admin .form-buttons .form-admin-next {
+  display: inline-block;
+  padding: 10px 15px;
+  border-radius: 5px;
+  background: #58ACD4;
+  cursor: pointer;
+  transition: all 0.5s ease;
+}
+.form .form-admin .form-buttons .form-admin-next:hover {
+  color: #58ACD4;
+  background: #FFFFFF;
+}
+.form .form-admin .form-buttons .form-admin-next.disabled {
+  opacity: 0.4;
+  pointer-events: none;
+}
+.form .form-home-button {
+  display: inline-block;
+  padding: 10px 15px;
+  border-radius: 5px;
+  background: #58ACD4;
+  cursor: pointer;
+  transition: all 0.5s ease;
+  color: #FFFFFF;
+  font-size: 20px;
+  margin-top: 30px;
+}
+.form .form-home-button:hover {
+  color: #58ACD4;
+  background: #FFFFFF;
+}
+.form .form-progress {
+  width: calc(100% - 60px);
+  height: 8px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.2);
+  margin-top: 10px;
+  position: absolute;
+  bottom: 30px;
+  left: 30px;
+}
+.form .form-progress-bar {
+  background: #58ACD4;
+  height: 8px;
+  border-radius: 8px;
+  width: 20%;
+  transition: all 0.5s ease;
+}
+.form-contact-image {
+  width: 200px;
+  height: 200px;
+}
+.form.stage-2 .form-box-wrapper {
+  margin-left: -100%;
+}
+.form.stage-2 .form-progress-bar {
+  width: 40%;
+}
+.form.stage-3 .form-box-wrapper {
+  margin-left: -200%;
+}
+.form.stage-3 .form-progress-bar {
+  width: 60%;
+}
+.form.stage-4 .form-box-wrapper {
+  margin-left: -300%;
+}
+.form.stage-4 .form-progress-bar {
+  width: 80%;
+}
+.form.stage-5 .form-box-wrapper {
+  margin-left: -400%;
+}
+.form.stage-5 .form-progress-bar {
+  width: 100%;
+}
+.hero {
+  z-index: 0;
+  position: relative;
+  padding: 60px 40px;
+  background: #F2F8FF;
+}
+@media only screen and (max-width: 768px) {
+  .hero {
+    padding: 30px 10px;
+  }
+}
+.hero-inner {
+  position: relative;
+  z-index: 10;
+  width: calc(63% - 60px);
+}
+@media only screen and (max-width: 1024px) {
+  .hero-inner {
+    width: calc(100% - 60px);
+  }
+}
+@media only screen and (max-width: 768px) {
+  .hero-inner {
+    width: 100%;
+    text-align: center;
+  }
+}
+.hero-inner h1 {
+  font-size: 55px;
+  line-height: 60px;
+}
+@media only screen and (max-width: 1200px) {
+  .hero-inner h1 {
+    font-size: 45px;
+    line-height: 50px;
+  }
+}
+@media only screen and (max-width: 1024px) {
+  .hero-inner h1 {
+    font-size: 32px;
+    line-height: 36px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .hero-inner h1 {
+    font-size: 28px;
+    line-height: 32px;
+  }
+}
+.hero-inner p {
+  font-size: 20px;
+  line-height: 26px;
+  margin-bottom: 40px;
+}
+@media only screen and (max-width: 768px) {
+  .hero-inner p {
+    font-size: 17px;
+    line-height: 20px;
+  }
+}
+.hero-inner ul {
+  margin: 0 0 30px 0;
+  padding: 0;
+}
+.hero-inner ul li {
+  margin-bottom: 20px;
+  font-size: 20px;
+  font-weight: 700;
+  list-style: none;
+}
+@media only screen and (max-width: 768px) {
+  .hero-inner ul li {
+    font-size: 17px;
+  }
+}
+.hero-inner ul li svg {
+  width: 24px;
+  height: 24px;
+  position: relative;
+  top: 5px;
+  margin-right: 5px;
+}
+.hero-inner #badge-ribbon {
+  margin-left: -10px;
+  height: 90px;
+  width: 300px;
+}
+@media only screen and (max-width: 768px) {
+  .hero-inner #badge-ribbon {
+    display: inline-block;
+  }
+}
+.intro {
+  padding: 60px 40px 100px;
+  background: url(../img/background.jpg);
+  background-size: cover;
+  background-position: top center;
+  position: relative;
+  z-index: 10;
+}
+@media only screen and (max-width: 768px) {
+  .intro {
+    padding: 30px 20px 100px;
+  }
+}
+.intro-inner {
+  width: 100%;
+  max-width: calc(63% - 60px);
+  color: #FFFFFF;
+  font-size: 18px;
+}
+@media only screen and (max-width: 1024px) {
+  .intro-inner {
+    max-width: 100%;
+    font-size: 16px;
+  }
+}
+.blocks {
+  width: 100%;
+  background: #F2F8FF;
+  position: relative;
+}
+.blocks-inner {
+  max-width: calc(63% - 60px);
+  width: 100%;
+  padding-left: 40px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  position: relative;
+  z-index: 20;
+}
+@media only screen and (max-width: 1024px) {
+  .blocks-inner {
+    max-width: calc(100% - 60px);
+  }
+}
+@media only screen and (max-width: 768px) {
+  .blocks-inner {
+    max-width: calc(100% - 10px);
+    padding-left: 10px;
+  }
+}
+.blocks-inner .block {
+  width: calc(50% - 15px);
+  padding: 30px;
+  text-align: center;
+  color: #FFFFFF;
+  border-radius: 30px;
+  margin-bottom: 30px;
+}
+@media only screen and (max-width: 768px) {
+  .blocks-inner .block {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+}
+.blocks-inner .block svg {
+  height: 70px;
+  width: auto;
+}
+.blocks-inner .block.secure {
+  background: #58ACD4;
+  margin-top: -50px;
+}
+.blocks-inner .block.sustainable {
+  background: #EBAD1A;
+  margin-top: -50px;
+}
+@media only screen and (max-width: 768px) {
+  .blocks-inner .block.sustainable {
+    margin-top: 0;
+  }
+}
+.blocks-inner .block.compliant {
+  background: #C93E4E;
+}
+.blocks-inner .block.social {
+  background: #6EA689;
+}
+.blocks-inner .booking {
+  background: #273B7D;
+  padding: 30px;
+  border-radius: 30px;
+  color: #FFFFFF;
+  display: flex;
+  margin-bottom: 30px;
+}
+@media only screen and (max-width: 1024px) {
+  .blocks-inner .booking {
+    flex-wrap: wrap;
+    text-align: center;
+    justify-content: center;
+  }
+}
+.blocks-inner .booking img {
+  height: 145px;
+  width: auto;
+  margin-right: 40px;
+}
+@media only screen and (max-width: 1024px) {
+  .blocks-inner .booking img {
+    display: inline-block;
+    margin-bottom: 20px;
+    margin-right: 0;
+  }
+}
+.blocks-inner .booking blockquote {
+  font-weight: 700;
+  font-size: 18px;
+  margin: 0 0 20px;
+}
+.ctas {
+  background: #58ACD4;
+  color: #FFFFFF;
+  padding: 40px;
+  position: relative;
+  z-index: 10;
+}
+@media only screen and (max-width: 768px) {
+  .ctas {
+    padding: 20px;
+  }
+}
+.ctas-inner {
+  max-width: calc(63% - 60px);
+  width: 100%;
+  font-size: 20px;
+  text-align: center;
+}
+@media only screen and (max-width: 1024px) {
+  .ctas-inner {
+    max-width: calc(100% - 60px);
+  }
+}
+@media only screen and (max-width: 768px) {
+  .ctas-inner {
+    max-width: 100%;
+  }
+}
+.ctas-inner a {
+  display: inline-block;
+  padding: 18px 15px 15px;
+  margin-left: 15px;
+  background: #C93E4E;
+  color: #FFFFFF;
+  border-radius: 10px;
+  line-height: 1;
+  font-size: 18px;
+  transform: all 0.5s ease;
+}
+@media only screen and (max-width: 1024px) {
+  .ctas-inner a {
+    margin-top: 15px;
+  }
+}
+.ctas-inner a:hover {
+  background: #FFFFFF;
+  color: #C93E4E;
+}
+footer .footer-top {
+  padding: 40px 40px;
+  background: #0F100E;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+@media only screen and (max-width: 1024px) {
+  footer .footer-top {
+    flex-wrap: wrap;
+  }
+}
+@media only screen and (max-width: 768px) {
+  footer .footer-top {
+    padding: 20px 20px;
+  }
+}
+footer .footer-top img {
+  max-height: 105px;
+  width: auto;
+  margin: 15px 10px;
+}
+footer .footer-bottom {
+  padding: 40px;
+  background: black;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+@media only screen and (max-width: 768px) {
+  footer .footer-bottom {
+    padding: 20px;
+  }
+}
+footer .footer-bottom img {
+  max-height: 45px;
+  width: auto;
+}
+footer .footer-bottom ul {
+  margin: 0;
+  padding: 0;
+  text-align: right;
+}
+footer .footer-bottom ul li {
+  color: #FFFFFF;
+  list-style: none;
+  display: inline-block;
+  margin-left: 25px;
+  font-size: 15px;
+}
+footer .footer-bottom ul li a {
+  color: #FFFFFF;
+}
+footer .footer-bottom ul li a:hover {
+  color: #6EA689;
+}
+footer .footer-bottom ul li a.main-site {
+  color: #EBAD1A;
+}
+footer .footer-bottom ul li a.main-site:hover {
+  color: #6EA689;
+}
+footer .rainbow {
+  width: 100%;
+  height: 7px;
+  display: flex;
+}
+footer .rainbow div {
+  width: 25%;
+  height: 100%;
+}
+footer .rainbow-blue {
+  background: #58ACD4;
+}
+footer .rainbow-yellow {
+  background: #EBAD1A;
+}
+footer .rainbow-red {
+  background: #C93E4E;
+}
+footer .rainbow-green {
+  background: #6EA689;
+}
+.range-slider {
+  margin: 0 0 0 0;
+}
+.range-slider {
+  width: 100%;
+}
+.range-slider__range {
+  -webkit-appearance: none;
+  width: calc(100% - 73px);
+  height: 6px;
+  border-radius: 5px;
+  background: rgba(255, 255, 255, 0.12);
+  outline: none;
+  padding: 0;
+  margin: 0;
+  position: relative;
+  top: -3px;
+}
+.range-slider__range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 8px;
+  height: 30px;
+  border-radius: 4px;
+  background: #58ACD4;
+  cursor: pointer;
+  -webkit-transition: background 0.15s ease-in-out;
+  transition: background 0.15s ease-in-out;
+}
+.range-slider__range::-webkit-slider-thumb:hover {
+  background: #FFF;
+}
+.range-slider__range::-moz-range-thumb {
+  width: 8px;
+  height: 30px;
+  border: 0;
+  border-radius: 4px;
+  background: #58ACD4;
+  cursor: pointer;
+  -moz-transition: background 0.15s ease-in-out;
+  transition: background 0.15s ease-in-out;
+}
+.range-slider__range::-moz-range-thumb:hover {
+  background: #FFF;
+}
+.range-slider__value {
+  display: inline-block;
+  position: relative;
+  width: 60px;
+  color: #fff;
+  text-align: center;
+  border-radius: 5px;
+  background: rgba(255, 255, 255, 0.13);
+  padding: 10px 10px 7px 10px;
+  margin-left: 8px;
+  font-family: 'Overpass', sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+}
+::-moz-range-track {
+  background: transparent;
+  background-color: rgba(255, 255, 255, 0.13);
+  border: 1px solid #FFFFFF;
+  box-shadow: none;
+}
+input::-moz-focus-inner,
+input::-moz-focus-outer {
+  border: 0;
+}
+.device-slider {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.device-slider-icon {
+  display: flex;
+  align-items: center;
+}
+.device-slider-icon img {
+  width: 50px;
+  height: auto;
+  margin-right: 15px;
+}
+@media only screen and (max-width: 768px) {
+  .device-slider-icon img {
+    width: 35px;
+  }
+}
+.device-slider-name {
+  font-size: 16px;
+  font-weight: 700;
+  margin-left: 10px;
+  width: 60px;
+  flex-shrink: 0;
+  flex-grow: 0;
+  text-align: left;
+}
+.device-slider.ds-desktops {
+  color: #58ACD4;
+}
+.device-slider.ds-desktops .range-slider__value {
+  color: #58ACD4;
+}
+.device-slider.ds-laptops {
+  color: #C93E4E;
+}
+.device-slider.ds-laptops .range-slider__value {
+  color: #C93E4E;
+}
+.device-slider.ds-servers {
+  color: #EBAD1A;
+}
+.device-slider.ds-servers .range-slider__value {
+  color: #EBAD1A;
+}
+.device-slider.ds-other {
+  color: #6EA689;
+}
+.device-slider.ds-other .range-slider__value {
+  color: #6EA689;
+}
+.ds-laptops .range-slider__range::-webkit-slider-thumb {
+  background: #C93E4E;
+}
+.ds-laptops .range-slider__range::-webkit-slider-thumb:hover {
+  background: #FFFFFF;
+}
+.ds-servers .range-slider__range::-webkit-slider-thumb {
+  background: #EBAD1A;
+}
+.ds-servers .range-slider__range::-webkit-slider-thumb:hover {
+  background: #FFFFFF;
+}
+.ds-other .range-slider__range::-webkit-slider-thumb {
+  background: #6EA689;
+}
+.ds-other .range-slider__range::-webkit-slider-thumb:hover {
+  background: #FFFFFF;
+}
+.ds-laptops .range-slider__range::-moz-range-thumb {
+  background: #C93E4E;
+}
+.ds-laptops .range-slider__range::-moz-range-thumb:hover {
+  background: #FFFFFF;
+}
+.ds-servers .range-slider__range::-moz-range-thumb {
+  background: #EBAD1A;
+}
+.ds-servers .range-slider__range::-moz-range-thumb:hover {
+  background: #FFFFFF;
+}
+.ds-other .range-slider__range::-moz-range-thumb {
+  background: #6EA689;
+}
+.ds-other .range-slider__range::-moz-range-thumb:hover {
+  background: #FFFFFF;
+}
+.other-label {
+  width: 100%;
+  text-align: left;
+  padding-left: 50px;
+  margin-top: -10px;
+  color: #6EA689;
+}
+
+
+</style>
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.css" integrity="sha512-6lLUdeQ5uheMFbWm3CP271l14RsX1xtx+J5x2yeIDkkiBpeVTNhTqijME7GgRKKi6hCqovwCoBTlRBEC20M8Mg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css" integrity="sha512-wR4oNhLBHf7smjy0K4oqzdWumd+r5/+6QO/vDda76MW5iug4PT7v86FoEkySIJft3XA0Ae6axhIvHrqwm793Nw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        
+        
+        <div class="valuation-button">
+            Get your valuation now
+        </div>
+
+<header>
+    <div class="rainbow">
+        <div class="rainbow-blue"></div>
+        <div class="rainbow-yellow"></div>
+        <div class="rainbow-red"></div>
+        <div class="rainbow-green"></div>
+    </div>
+    <div class="header">
+        <div class="logo">
+            <img src="img/rapidit.svg" alt="Rapid IT">
+        </div>
+        <div class="phone">
+            <a href="tel:01282798256"><span>Call <span class="hide-mob">us now on </span></span>01282 798 256</a>
+        </div>
+    </div>
+</header>
+
+<div class="trusted-slider">
+    <div class="trusted-slider--label">Trusted <span>by</span></div>
+    <div class="trusted-slider--wrapper">
+        <div class="trusted-slider--slide"><img src="img/dnata.svg" alt="dnata"></div>
+        <div class="trusted-slider--slide"><img src="img/bookingcom.svg" alt="booking.com"></div>
+        <div class="trusted-slider--slide"><img src="img/veka.svg" alt="Veka"></div>
+        <div class="trusted-slider--slide"><img src="img/piolax.svg" alt="Piolax"></div>
+    </div>
+</div>
+
+
+
+        <div class="form">
+            <div class="form-box">
+
+                <div class="form-close"><img src="img/close.svg"></div>
+
+
+                <div class="form-box-wrapper">
+
+                <div class="form-box-1 form-box-inner">
+                    <h2>Get your valuation now</h2>
+                    <p>Complete our quick form to receive your quote.</p>
+                    <p><strong>Please adjust the sliders below to tell us how many devices you have:</strong></p>
+
+
+                    <div class="device-slider ds-desktops">
+                        <div class="device-slider-icon">
+                            <img src="img/desktop.svg" alt="Desktop">
+                        </div>
+                        <div class="range-slider">
+                          <input class="range-slider__range" id="slider1" type="range" value="0" min="0" max="50">
+                          <span class="range-slider__value">0</span>
+                        </div>
+                        <div class="device-slider-name">desktops</div>
+                    </div>
+
+                    <div class="device-slider ds-laptops">
+                        <div class="device-slider-icon">
+                            <img src="img/laptop.svg" alt="Laptop">
+                        </div>
+                    <div class="range-slider">
+                      <input class="range-slider__range" id="slider2" type="range" value="0" min="0" max="50">
+                      <span class="range-slider__value">0</span>
+                    </div>
+                          <div class="device-slider-name">laptops</div>
+                    </div>
+
+
+                    <div class="device-slider ds-servers">
+                        <div class="device-slider-icon">
+                            <img src="img/server.svg" alt="Server">
+                        </div>
+                    <div class="range-slider">
+                      <input class="range-slider__range" id="slider3" type="range" value="0" min="0" max="10">
+                      <span class="range-slider__value">0</span>
+                    </div>
+                          <div class="device-slider-name">servers</div>
+                    </div>
+
+                    <div class="device-slider ds-other">
+                        <div class="device-slider-icon">
+                            <img src="img/other.svg" alt="Other">
+                        </div>
+                    <div class="range-slider">
+                      <input class="range-slider__range" id="slider4" type="range" value="0" min="0" max="50">
+                      <span class="range-slider__value">0</span>
+                    </div>
+                          <div class="device-slider-name">other</div>
+                    </div>
+                    <div class="other-label">eg. Monitors, tablets, mobiles etc.</div>
+
+                    <div class="form-admin">
+                        <div class="form-admin-pagination">
+                            <strong>Step 1</strong> of 4
+                        </div>
+                        <div class="form-buttons">
+                        <div class="form-admin-skip">
+                            Skip
+                        </div>
+                        <div class="form-admin-next disabled">
+                            Next
+                        </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="form-box-2 form-box-inner">
+                    <h2>Here is your valuation</h2>
+                    <p><strong>Your hardware could be worth</strong></p>
+
+                    <div class="hw-total" id="hw-total"></div>
+
+                    <p><strong>This is an estimate.</strong> To receive an accurate valuation please continue and provide us with further details.</p>
+
+                    <div class="form-admin">
+                        <div class="form-admin-pagination">
+                            <strong>Step 2</strong> of 4
+                        </div>
+                        <div class="form-buttons">
+                        <div class="form-admin-next">
+                            Next
+                        </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="form-box-3 form-box-inner">
+                    <h2>Your business</h2>
+                    <p>Complete our quick form to receive your quote.</p>
+
+                    <h3>Business Details</h3>
+
+                    <input type="text" id="input-business" name="business" placeholder="Business name">
+                    <input type="number" id="input-employees" name="employees" placeholder="Number of employees">
+                    <select>
+                        <option disabled="disabled" value="Industry" selected="selected">Industry</option>
+                        <option value="Accounting">Accounting</option>
+                        <option value="Airlines/Aviation">Airlines/Aviation</option>
+                        <option value="Alternative Dispute Resolution">Alternative Dispute Resolution</option>
+                        <option value="Alternative Medicine">Alternative Medicine</option>
+                        <option value="Animation">Animation</option>
+                        <option value="Apparel & Fashion">Apparel & Fashion</option>
+                        <option value="Architecture & Planning">Architecture & Planning</option>
+                        <option value="Arts and Crafts">Arts and Crafts</option>
+                        <option value="Automotive">Automotive</option>
+                        <option value="Aviation & Aerospace">Aviation & Aerospace</option>
+                        <option value="Banking">Banking</option>
+                        <option value="Biotechnology">Biotechnology</option>
+                        <option value="Broadcast Media">Broadcast Media</option>
+                        <option value="Building Materials">Building Materials</option>
+                        <option value="Business Supplies and Equipment">Business Supplies and Equipment</option>
+                        <option value="Capital Markets">Capital Markets</option>
+                        <option value="Chemicals">Chemicals</option>
+                        <option value="Civic & Social Organization">Civic & Social Organization</option>
+                        <option value="Civil Engineering">Civil Engineering</option>
+                        <option value="Commercial Real Estate">Commercial Real Estate</option>
+                        <option value="Computer & Network Security">Computer & Network Security</option>
+                        <option value="Computer Games">Computer Games</option>
+                        <option value="Computer Hardware">Computer Hardware</option>
+                        <option value="Computer Networking">Computer Networking</option>
+                        <option value="Computer Software">Computer Software</option>
+                        <option value="Internet">Internet</option>
+                        <option value="Construction">Construction</option>
+                        <option value="Consumer Electronics">Consumer Electronics</option>
+                        <option value="Consumer Goods">Consumer Goods</option>
+                        <option value="Consumer Services">Consumer Services</option>
+                        <option value="Cosmetics">Cosmetics</option>
+                        <option value="Dairy">Dairy</option>
+                        <option value="Defense & Space">Defense & Space</option>
+                        <option value="Design">Design</option>
+                        <option value="Education Management">Education Management</option>
+                        <option value="E-Learning">E-Learning</option>
+                        <option value="Electrical/Electronic Manufacturing">Electrical/Electronic Manufacturing</option>
+                        <option value="Entertainment">Entertainment</option>
+                        <option value="Environmental Services">Environmental Services</option>
+                        <option value="Events Services">Events Services</option>
+                        <option value="Executive Office">Executive Office</option>
+                        <option value="Facilities Services">Facilities Services</option>
+                        <option value="Farming">Farming</option>
+                        <option value="Financial Services">Financial Services</option>
+                        <option value="Fine Art">Fine Art</option>
+                        <option value="Fishery">Fishery</option>
+                        <option value="Food & Beverages">Food & Beverages</option>
+                        <option value="Food Production">Food Production</option>
+                        <option value="Fund-Raising">Fund-Raising</option>
+                        <option value="Furniture">Furniture</option>
+                        <option value="Gambling & Casinos">Gambling & Casinos</option>
+                        <option value="Glass, Ceramics & Concrete">Glass, Ceramics & Concrete</option>
+                        <option value="Government Administration">Government Administration</option>
+                        <option value="Government Relations">Government Relations</option>
+                        <option value="Graphic Design">Graphic Design</option>
+                        <option value="Health, Wellness and Fitness">Health, Wellness and Fitness</option>
+                        <option value="Higher Education">Higher Education</option>
+                        <option value="Hospital & Health Care">Hospital & Health Care</option>
+                        <option value="Hospitality">Hospitality</option>
+                        <option value="Human Resources">Human Resources</option>
+                        <option value="Import and Export">Import and Export</option>
+                        <option value="Individual & Family Services">Individual & Family Services</option>
+                        <option value="Industrial Automation">Industrial Automation</option>
+                        <option value="Information Services">Information Services</option>
+                        <option value="Information Technology and Services">Information Technology and Services</option>
+                        <option value="Insurance">Insurance</option>
+                        <option value="International Affairs">International Affairs</option>
+                        <option value="International Trade and Development">International Trade and Development</option>
+                        <option value="Investment Banking">Investment Banking</option>
+                        <option value="Investment Management">Investment Management</option>
+                        <option value="Judiciary">Judiciary</option>
+                        <option value="Law Enforcement">Law Enforcement</option>
+                        <option value="Law Practice">Law Practice</option>
+                        <option value="Legal Services">Legal Services</option>
+                        <option value="Legislative Office">Legislative Office</option>
+                        <option value="Leisure, Travel & Tourism">Leisure, Travel & Tourism</option>
+                        <option value="Libraries">Libraries</option>
+                        <option value="Logistics and Supply Chain">Logistics and Supply Chain</option>
+                        <option value="Luxury Goods & Jewelry">Luxury Goods & Jewelry</option>
+                        <option value="Machinery">Machinery</option>
+                        <option value="Management Consulting">Management Consulting</option>
+                        <option value="Maritime">Maritime</option>
+                        <option value="Market Research">Market Research</option>
+                        <option value="Marketing and Advertising">Marketing and Advertising</option>
+                        <option value="Mechanical or Industrial Engineering">Mechanical or Industrial Engineering</option>
+                        <option value="Media Production">Media Production</option>
+                        <option value="Medical Devices">Medical Devices</option>
+                        <option value="Medical Practice">Medical Practice</option>
+                        <option value="Mental Health Care">Mental Health Care</option>
+                        <option value="Military">Military</option>
+                        <option value="Mining & Metals">Mining & Metals</option>
+                        <option value="Motion Pictures and Film">Motion Pictures and Film</option>
+                        <option value="Museums and Institutions">Museums and Institutions</option>
+                        <option value="Music">Music</option>
+                        <option value="Nanotechnology">Nanotechnology</option>
+                        <option value="Newspapers">Newspapers</option>
+                        <option value="Nonprofit Organization Management">Nonprofit Organization Management</option>
+                        <option value="Oil & Energy">Oil & Energy</option>
+                        <option value="Online Media">Online Media</option>
+                        <option value="Outsourcing/Offshoring">Outsourcing/Offshoring</option>
+                        <option value="Package/Freight Delivery">Package/Freight Delivery</option>
+                        <option value="Packaging and Containers">Packaging and Containers</option>
+                        <option value="Paper & Forest Products">Paper & Forest Products</option>
+                        <option value="Performing Arts">Performing Arts</option>
+                        <option value="Pharmaceuticals">Pharmaceuticals</option>
+                        <option value="Philanthropy">Philanthropy</option>
+                        <option value="Photography">Photography</option>
+                        <option value="Plastics">Plastics</option>
+                        <option value="Political Organization">Political Organization</option>
+                        <option value="Primary/Secondary Education">Primary/Secondary Education</option>
+                        <option value="Printing">Printing</option>
+                        <option value="Professional Training & Coaching">Professional Training & Coaching</option>
+                        <option value="Program Development">Program Development</option>
+                        <option value="Public Policy">Public Policy</option>
+                        <option value="Public Relations and Communications">Public Relations and Communications</option>
+                        <option value="Public Safety">Public Safety</option>
+                        <option value="Publishing">Publishing</option>
+                        <option value="Railroad Manufacture">Railroad Manufacture</option>
+                        <option value="Ranching">Ranching</option>
+                        <option value="Real Estate">Real Estate</option>
+                        <option value="Recreational Facilities and Services">Recreational Facilities and Services</option>
+                        <option value="Religious Institutions">Religious Institutions</option>
+                        <option value="Renewables & Environment">Renewables & Environment</option>
+                        <option value="Research">Research</option>
+                        <option value="Restaurants">Restaurants</option>
+                        <option value="Retail">Retail</option>
+                        <option value="Security and Investigations">Security and Investigations</option>
+                        <option value="Semiconductors">Semiconductors</option>
+                        <option value="Shipbuilding">Shipbuilding</option>
+                        <option value="Sporting Goods">Sporting Goods</option>
+                        <option value="Sports">Sports</option>
+                        <option value="Staffing and Recruiting">Staffing and Recruiting</option>
+                        <option value="Supermarkets">Supermarkets</option>
+                        <option value="Telecommunications">Telecommunications</option>
+                        <option value="Textiles">Textiles</option>
+                        <option value="Think Tanks">Think Tanks</option>
+                        <option value="Tobacco">Tobacco</option>
+                        <option value="Translation and Localization">Translation and Localization</option>
+                        <option value="Transportation/Trucking/Railroad">Transportation/Trucking/Railroad</option>
+                        <option value="Utilities">Utilities</option>
+                        <option value="Venture Capital & Private Equity">Venture Capital & Private Equity</option>
+                        <option value="Veterinary">Veterinary</option>
+                        <option value="Warehousing">Warehousing</option>
+                        <option value="Wholesale">Wholesale</option>
+                        <option value="Wine and Spirits">Wine and Spirits</option>
+                        <option value="Wireless">Wireless</option>
+                        <option value="Writing and Editing">Writing and Editing</option>
+                    </select>
+
+                    <div class="form-admin">
+                        <div class="form-admin-pagination">
+                            <strong>Step 3</strong> of 4
+                        </div>
+                        <div class="form-buttons">
+                        <div class="form-admin-skip">
+                            Skip
+                        </div>
+                        <div class="form-admin-next">
+                            Next
+                        </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="form-box-4 form-box-inner">
+                    <h2>Just a few details...</h2>
+                    <p>Complete our quick form to receive your quote.</p>
+
+                    <h3>Your Details</h3>
+                    
+                    <input type="text" id="input-name" name="name" placeholder="Full name*" class="required">
+                    <input type="phone" id="input-phone" name="phone" placeholder="Contact number*" class="required">
+                    <input type="email" id="input-email" name="email" placeholder="Email address*" class="required">
+
+
+                    <div class="form-admin">
+                        <div class="form-admin-pagination">
+                            <strong>Step 4</strong> of 4
+                        </div>
+                        <div class="form-buttons">
+                        <div class="form-admin-next disabled">
+                            Get your valuation now
+                        </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div class="form-box-5 form-box-inner">
+                    <h2>Thank you!</h2>
+
+                    <img class="form-contact-image" src="img/chris.png">
+
+                    <p>We will be in touch as soon as possible.</p>
+
+                    <p>In the meantime, feel free to take a look at our website to learn more about our services.</p>
+
+                    <a class="form-home-button" href="https://rapidit.co.uk/">Go to main website</a>
+
+                    <div class="form-admin">
+                        <div class="form-admin-pagination">
+                            <strong>Complete</strong>
+                        </div>
+                        <div class="form-buttons">
+                        <div class="form-admin-next" style="opacity: 0;">
+                            Next
+                        </div>
+                        </div>
+                    </div>
+                </div>
+
+                </div>
+
+
+                <div class="form-progress">
+                    <div class="form-progress-bar"></div>
+                </div>
+
+            </div>
+        </div>
+
+
+
+
+        <div class="hero">
+            <div class="hero-inner">
+                <h1>Sustainable and Secure<br> IT Asset Disposal</h1>
+                <p>If your assets are less than 6 years old, we will be able to offer you up to £500 back per device, depending on its age, specification and condition.</p>
+                <ul>
+                    <li><svg width="27" height="28" viewBox="0 0 27 28" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(#clip0_26_604)"><path d="M12.8566 18.5828C12.2818 19.1789 11.3432 19.1789 10.7684 18.5828L7.39336 15.0828C6.81855 14.4867 6.81855 13.5133 7.39336 12.9172C7.96816 12.3211 8.90684 12.3211 9.48164 12.9172L11.8125 15.3344L17.5184 9.41719C18.0932 8.82109 19.0318 8.82109 19.6066 9.41719C20.1814 10.0133 20.1814 10.9867 19.6066 11.5828L12.8566 18.5828ZM27 14C27 21.7328 20.9566 28 13.5 28C6.04336 28 0 21.7328 0 14C0 6.26719 6.04336 0 13.5 0C20.9566 0 27 6.26719 27 14ZM13.5 2.625C7.44082 2.625 2.53125 7.71641 2.53125 14C2.53125 20.2836 7.44082 25.375 13.5 25.375C19.5592 25.375 24.4688 20.2836 24.4688 14C24.4688 7.71641 19.5592 2.625 13.5 2.625Z" fill="#58ACD4"/></g><defs><clipPath id="clip0_26_604"><rect width="27" height="28" fill="white"/></clipPath></defs></svg>
+                    Money back for redundant hardware</li>
+                    <li><svg width="27" height="28" viewBox="0 0 27 28" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(#clip0_26_604)"><path d="M12.8566 18.5828C12.2818 19.1789 11.3432 19.1789 10.7684 18.5828L7.39336 15.0828C6.81855 14.4867 6.81855 13.5133 7.39336 12.9172C7.96816 12.3211 8.90684 12.3211 9.48164 12.9172L11.8125 15.3344L17.5184 9.41719C18.0932 8.82109 19.0318 8.82109 19.6066 9.41719C20.1814 10.0133 20.1814 10.9867 19.6066 11.5828L12.8566 18.5828ZM27 14C27 21.7328 20.9566 28 13.5 28C6.04336 28 0 21.7328 0 14C0 6.26719 6.04336 0 13.5 0C20.9566 0 27 6.26719 27 14ZM13.5 2.625C7.44082 2.625 2.53125 7.71641 2.53125 14C2.53125 20.2836 7.44082 25.375 13.5 25.375C19.5592 25.375 24.4688 20.2836 24.4688 14C24.4688 7.71641 19.5592 2.625 13.5 2.625Z" fill="#EBAD1A"/></g><defs><clipPath id="clip0_26_604"><rect width="27" height="28" fill="white"/></clipPath></defs></svg>
+                    Contribute to the circular economy</li>
+                    <li><svg width="27" height="28" viewBox="0 0 27 28" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(#clip0_26_604)"><path d="M12.8566 18.5828C12.2818 19.1789 11.3432 19.1789 10.7684 18.5828L7.39336 15.0828C6.81855 14.4867 6.81855 13.5133 7.39336 12.9172C7.96816 12.3211 8.90684 12.3211 9.48164 12.9172L11.8125 15.3344L17.5184 9.41719C18.0932 8.82109 19.0318 8.82109 19.6066 9.41719C20.1814 10.0133 20.1814 10.9867 19.6066 11.5828L12.8566 18.5828ZM27 14C27 21.7328 20.9566 28 13.5 28C6.04336 28 0 21.7328 0 14C0 6.26719 6.04336 0 13.5 0C20.9566 0 27 6.26719 27 14ZM13.5 2.625C7.44082 2.625 2.53125 7.71641 2.53125 14C2.53125 20.2836 7.44082 25.375 13.5 25.375C19.5592 25.375 24.4688 20.2836 24.4688 14C24.4688 7.71641 19.5592 2.625 13.5 2.625Z" fill="#C93E4E"/></g><defs><clipPath id="clip0_26_604"><rect width="27" height="28" fill="white"/></clipPath></defs></svg>
+                    Secure data destruction</li>
+                    <li><svg width="27" height="28" viewBox="0 0 27 28" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(#clip0_26_604)"><path d="M12.8566 18.5828C12.2818 19.1789 11.3432 19.1789 10.7684 18.5828L7.39336 15.0828C6.81855 14.4867 6.81855 13.5133 7.39336 12.9172C7.96816 12.3211 8.90684 12.3211 9.48164 12.9172L11.8125 15.3344L17.5184 9.41719C18.0932 8.82109 19.0318 8.82109 19.6066 9.41719C20.1814 10.0133 20.1814 10.9867 19.6066 11.5828L12.8566 18.5828ZM27 14C27 21.7328 20.9566 28 13.5 28C6.04336 28 0 21.7328 0 14C0 6.26719 6.04336 0 13.5 0C20.9566 0 27 6.26719 27 14ZM13.5 2.625C7.44082 2.625 2.53125 7.71641 2.53125 14C2.53125 20.2836 7.44082 25.375 13.5 25.375C19.5592 25.375 24.4688 20.2836 24.4688 14C24.4688 7.71641 19.5592 2.625 13.5 2.625Z" fill="#6EA689"/></g><defs><clipPath id="clip0_26_604"><rect width="27" height="28" fill="white"/></clipPath></defs></svg>
+                    Reduce your carbon impact</li>
+                    <li><svg width="27" height="28" viewBox="0 0 27 28" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(#clip0_26_604)"><path d="M12.8566 18.5828C12.2818 19.1789 11.3432 19.1789 10.7684 18.5828L7.39336 15.0828C6.81855 14.4867 6.81855 13.5133 7.39336 12.9172C7.96816 12.3211 8.90684 12.3211 9.48164 12.9172L11.8125 15.3344L17.5184 9.41719C18.0932 8.82109 19.0318 8.82109 19.6066 9.41719C20.1814 10.0133 20.1814 10.9867 19.6066 11.5828L12.8566 18.5828ZM27 14C27 21.7328 20.9566 28 13.5 28C6.04336 28 0 21.7328 0 14C0 6.26719 6.04336 0 13.5 0C20.9566 0 27 6.26719 27 14ZM13.5 2.625C7.44082 2.625 2.53125 7.71641 2.53125 14C2.53125 20.2836 7.44082 25.375 13.5 25.375C19.5592 25.375 24.4688 20.2836 24.4688 14C24.4688 7.71641 19.5592 2.625 13.5 2.625Z" fill="#78797A"/></g><defs><clipPath id="clip0_26_604"><rect width="27" height="28" fill="white"/></clipPath></defs></svg>
+                    Hassle free process</li>
+                </ul>
+                <script src="https://widget.reviews.io/badge-ribbon/dist.js"></script>
+                <a href=""><div id="badge-ribbon"></div></a>
+                <script>
+                    reviewsBadgeRibbon("badge-ribbon", {
+                        store: "rapid-it-ltd",
+                        size: "small",
+                        mono: false,
+                    });
+                </script>
+            </div>
+
+            <div class="balls">
+                <div id="ball1"></div>
+                <div id="ball2"></div>
+            </div>
+        </div>
+
+        
+
+
+        <div class="partnered-slider">
+            <div class="partnered-slider--label">Partnered <span>with</span></div>
+            <div class="partnered-slider--wrapper">
+                <div class="partnered-slider--slide"><img src="img/dell.svg" alt="Dell"></div>
+                <div class="partnered-slider--slide"><img src="img/lenovo.svg" alt="Lenovo"></div>
+                <div class="partnered-slider--slide"><img src="img/hp.svg" alt="HP"></div>
+                <div class="partnered-slider--slide"><img src="img/google.svg" alt="Google"></div>
+                <div class="partnered-slider--slide"><img src="img/microsoft.svg" alt="Microsoft"></div>
+                <div class="partnered-slider--slide"><img src="img/wipedrive.svg" alt="Wipedrive"></div>
+                <div class="partnered-slider--slide"><img src="img/ecologi.svg" alt="Ecologi"></div>
+
+            </div>
+        </div>
+
+
+        <div class="intro">
+            <div class="intro-inner">
+                <p><strong>We’re experts in extracting the cash that might be locked away in the hardware that’s no longer useful to you, whilst maintaining our core value of having a purpose beyond profit.</strong></p>
+
+                <p>Adhering to ADISA 8.0’s strict certification guidelines, you’re actively choosing one of less than 10 companies in the UK certified to this standard – so you can have the confidence in working with us as your IT Asset Disposal (ITAD) partner.</p>
+            </div>
+        </div>
+
+        <div class="blocks">
+            <div class="blocks-inner">
+            <div class="block secure">
+                <h3>Secure</h3>
+                <?xml version="1.0" encoding="UTF-8"?><svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48.01497 62"><defs><style>.cls-1{fill:none;stroke:#fff;stroke-linecap:round;stroke-linejoin:round;stroke-width:2px;}</style></defs><rect class="cls-1" x="1" y="25.55013" width="46.01497" height="35.44987" rx="6.09205" ry="6.09205"/><path class="cls-1" d="M27.91201,43.27509c0,2.15637-1.74811,3.90448-3.90448,3.90448s-3.90448-1.74811-3.90448-3.90448c0-2.15649,1.74811-3.9046,3.90448-3.9046s3.90448,1.74811,3.90448,3.9046Z"/><line class="cls-1" x1="24.00749" y1="52.93101" x2="24.00749" y2="47.17957"/><path class="cls-1" d="M10.14819,25.55013V14.8593c0-7.65428,6.20502-13.8593,13.8593-13.8593s13.8593,6.20502,13.8593,13.8593v10.69084"/><path class="cls-1" d="M14.43922,25.43302V14.8593c0-5.30401,4.29975-9.60376,9.60376-9.60376s9.60376,4.29975,9.60376,9.60376v10.57372"/></svg>
+                <p>We know handling and destroying your data correctly is paramount. Our processes are secure and reliable, utilising GPS tracked vehicles and DBS checked staff. All our data destruction methods render data irretrievable.</p>
+            </div>
+            <div class="block sustainable">
+                <h3>Sustainable</h3>
+                <?xml version="1.0" encoding="UTF-8"?><svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 51.40702 62"><defs><style>.cls-1{fill:none;stroke:#fff;stroke-linecap:round;stroke-linejoin:round;stroke-width:2px;}</style></defs><path class="cls-1" d="M15.61681,46.13654s-.22619-9.5988,13.40162-20.42468"/><path class="cls-1" d="M25.05406,40.33605s8.19483,.25735,10.8102-8.02466c2.61537-8.28201-.95897-16.77005-.95897-16.77005,0,0-.31307,3.82308-6.79997,4.9137-6.10949,1.02717-15.18653,4.40209-9.24967,16.36764"/><path class="cls-1" d="M17.98338,54.47325C8.12086,51.23147,1,41.94732,1,31,1,17.35663,12.06014,6.29649,25.70351,6.29649"/><path class="cls-1" d="M32.97744,7.3848c10.09322,3.10524,17.42958,12.50347,17.42958,23.6152,0,13.64337-11.06014,24.70351-24.70351,24.70351"/><polyline class="cls-1" points="21.11108 1 26.43781 6.29649 21.11108 11.0688"/><polyline class="cls-1" points="30.49355 61 25.16681 55.70351 30.49355 50.9312"/></svg>
+                <p>Sustainability is at the heart of what we do. Rapid IT are committed to giving a 2nd life to as much hardware as possible, and recycling anything that’s not fit for purpose, ensuring nothing goes to landfill.</p>
+            </div>
+            <div class="block compliant">
+                <h3>Compliant</h3>
+                <?xml version="1.0" encoding="UTF-8"?><svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 43.94281 62"><defs><style>.cls-1{fill:none;stroke:#fff;stroke-linecap:round;stroke-linejoin:round;stroke-width:2px;}</style></defs><path class="cls-1" d="M32.69419,10.43652h5.9071c2.39776,0,4.34153,1.94377,4.34153,4.34153V56.65847c0,2.39776-1.94377,4.34153-4.34153,4.34153H5.34153c-2.39776,0-4.34153-1.94377-4.34153-4.34153V14.77805c0-2.39776,1.94377-4.34153,4.34153-4.34153h6.86535"/><path class="cls-1" d="M32.69419,14.20006H12.20687V6.2839h5.93624v-1.3526c0-2.1665,1.85036-3.92466,4.13748-3.93129h0c2.24543-.00651,4.08909,1.67986,4.16077,3.80579l.04984,1.47809h6.20297v7.91616Z"/><polyline class="cls-1" points="7.57824 27.60824 9.56479 29.59479 14.79672 24.36286"/><line class="cls-1" x1="19.88515" y1="27.35988" x2="36.50963" y2="27.35988"/><polyline class="cls-1" points="7.57824 38.81199 9.56479 40.79855 14.79672 35.56662"/><line class="cls-1" x1="19.88515" y1="38.56364" x2="36.50963" y2="38.56364"/><polyline class="cls-1" points="7.57824 50.01575 9.56479 52.0023 14.79672 46.77037"/><line class="cls-1" x1="19.88515" y1="49.7674" x2="36.50963" y2="49.7674"/></svg>
+                <p>As an ADISA 8.0 certified company following procedures certified by UKAS and the ICO, we understand that compliance and reporting is key in allowing your organisation to satisfy your internal audits, too.</p>
+            </div>
+            <div class="block social">
+                <h3>Social Value</h3>
+                <?xml version="1.0" encoding="UTF-8"?><svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 67.10272 62"><defs><style>.cls-1{fill:none;stroke:#fff;stroke-linecap:round;stroke-linejoin:round;stroke-width:2px;}</style></defs><path class="cls-1" d="M45.24241,46.43317c-1.99923-1.99923-5.24062-1.99923-7.23985,0-1.99923,1.99923-1.99923,5.24062,0,7.23985l3.90099,3.90099c1.99923,1.99923,5.24062,1.99923,7.23985,0,1.99923-1.99923,1.99923-5.24062,0-7.23985l-3.90099-3.90099Z"/><path class="cls-1" d="M57.96806,30.19941c-1.99923-1.99923-5.24062-1.99923-7.23985,0s-1.99923,5.24062,0,7.23985l5.65506,5.65506c1.99923,1.99923,5.24062,1.99923,7.23985,0s1.99923-5.24062,0-7.23985l-5.65506-5.65506Z"/><path class="cls-1" d="M48.09711,34.80817c-1.99923-1.99923-5.24062-1.99923-7.23985,0s-1.99923,5.24062,0,7.23985l8.28615,8.28615c1.99923,1.99923,5.24062,1.99923,7.23985,0s1.99923-5.24062,0-7.23985l-8.28615-8.28615Z"/><path class="cls-1" d="M21.11214,41.11988l-3.74541,3.74542c-1.89064,1.89065-4.96125,2.19678-7.02284,.49417-2.36494-1.95314-2.48914-5.4619-.3726-7.57844l1.52651-1.52651,14.54672-14.54672c1.27967-1.27967,3.35442-1.27967,4.63409,0l2.41883,2.41883c2.17957,2.17957,5.71336,2.17957,7.89294,0h0c2.17957-2.17958,2.17957-5.71337,0-7.89294L30.884,6.12728c-6.83637-6.83637-17.92032-6.83637-24.75669,0l-.00002,.00002c-6.83637,6.83637-6.83637,17.92032,0,24.75669l5.37052,5.37052"/><path class="cls-1" d="M30.10605,46.60567l-5.65506,5.65506c-1.99923,1.99923-1.99923,5.24062,0,7.23985s5.24062,1.99923,7.23985,0l5.65506-5.65506"/><path class="cls-1" d="M22.8662,39.36582l-5.65506,5.65506c-1.99923,1.99923-1.99923,5.24062,0,7.23985s5.24062,1.99923,7.23985,0l5.65506-5.65506"/><path class="cls-1" d="M36.66274,11.90602l3.71493-3.71493c5.88496-5.88496,15.42635-5.88496,21.31131,0l.00002,.00002c5.88496,5.88496,5.88496,15.42635,0,21.31131l-2.20897,2.20897"/></svg>
+                <p>Engrained within our culture is a purpose beyond profit. Giving back into the local and wider community is an important part of what we’re striving for and working with clients that share these values is essential.</p>
+            </div>
+            <div class="booking">
+                <img src="img/booking-testimonial.png" alt="Booking.com testimonial">
+                <div class="booking-inner">
+                    <blockquote>I was ecstatic with how Rapid IT handled this complex project, particularly in such a short space of time. After collecting, data wiping, processing, remarketing and reporting, booking.com received a £15,000 rebate which I was very happy with.</blockquote>
+                    <cite><strong>Massimo Di Dio</strong> – Regional IT Manager</cite>
+                </div>
+                
+            </div>
+            </div>
+            <div class="balls">
+                <div id="ball3"></div>
+                <div id="ball4"></div>
+            </div>
+        </div>
+
+        <div class="ctas">
+            <div class="ctas-inner">
+                Need some assistance? <strong>We can help. </strong><a href="tel:01282798256">Call us on <strong>01282 798 256</strong></a> <a href="#">Chat to Us</a>
+            </div>
+        </div>
+
+       <footer>
+           <div class="footer-top">
+               <img src="img/qms1.svg" alt="QMS BS 15713">
+               <img src="img/qms2.svg" alt="QMS ISO 14001">
+               <img src="img/qms3.svg" alt="QMS ISO 27001">
+               <img src="img/qms4.svg" alt="QMS ISO 9001">
+               <img src="img/adisa.png" alt="ADISA Certified">
+               <img src="img/cyber-essentials.svg" alt="Cyber Essentials">
+           </div>
+           <div class="footer-bottom">
+               
+                    <div class="logo">
+                        <img src="img/rapidit.svg" alt="Rapid IT">
+                    </div>
+                    <ul>
+                        <li><strong>&copy; Rapid IT 2023</strong></li>
+                        <li>Company No: 07422029</li>
+                        <li>VAT No: GB174027029</li>
+                        <li><a href="">Privacy & Cookies</a></li>
+                        <li><a href="">Compliance</a></li>
+                        <li><a href="" class="main-site">Go to main website</a></li>
+                    </ul>
+            
+           </div>
+           <div class="rainbow">
+                <div class="rainbow-blue"></div>
+                <div class="rainbow-yellow"></div>
+                <div class="rainbow-red"></div>
+                <div class="rainbow-green"></div>
+            </div>
+       </footer>
+
+       
+        <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js" integrity="sha512-XtmMtDEcNz2j7ekrtHvOVR4iwwaD6o/FUJe6+Zq+HgcCsk3kj4uSQQR8weQ2QVj1o0Pk6PwYLohm206ZzNfubg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        
+         <script type="text/javascript">
+            // SCRIPTS
+            jQuery(document).ready(function($){
+
+
+                $('.valuation-button').on('click', function(){
+                    $('.form').addClass('open');
+                });
+
+                $('.form-close').on('click', function(){
+                    $('.form').removeClass('open');
+                });
+            
+
+              $('.trusted-slider--wrapper').slick({
+                infinite: true,
+                slidesToShow: 4,
+                slidesToScroll: 1,
+                autoplay: true,
+                autoplaySpeed: 2000,
+                arrows: false,
+                dots: false,
+                responsive: [
+                    {
+                      breakpoint: 1200,
+                      settings: {
+                        slidesToShow: 3
+                      }
+                    },
+                    {
+                      breakpoint: 992,
+                      settings: {
+                        slidesToShow: 2
+                      }
+                    }
+                  ]
+              });
+              $('.partnered-slider--wrapper').slick({
+                infinite: true,
+                slidesToShow: 2,
+                slidesToScroll: 1,
+                autoplay: true,
+                autoplaySpeed: 2000,
+                arrows: false,
+                dots: false,
+                responsive: [
+                    {
+                      breakpoint: 1024,
+                      settings: {
+                        slidesToShow: 3
+                      }
+                    },
+                    {
+                      breakpoint: 768,
+                      settings: {
+                        slidesToShow: 2
+                      }
+                    }
+                  ]
+              });
+
+            var layoutsize = function(){
+                    var height1 = $('.hero').outerHeight();
+                    var height2 = $('.partnered-slider').outerHeight();
+                    var height3 = $('.intro').outerHeight();
+                    var height4 = $('.blocks').outerHeight();
+                    var height5 = $('.ctas').outerHeight();
+                    var totalHeight = height1 + height2 + height3 + height4 + height5 - 70;
+                    $('.form').css('height', totalHeight);
+            };
+
+            $('.form-box-1 .form-admin-next').on('click', function(){
+                $('.form').removeClass('stage-1 stage-3 stage-4 stage-5');
+                $('.form').addClass('stage-2');
+            });
+
+            $('.form-box-2 .form-admin-next').on('click', function(){
+                $('.form').removeClass('stage-1 stage-2 stage-4 stage-5');
+                $('.form').addClass('stage-3');
+            });
+
+            $('.form-box-3 .form-admin-next').on('click', function(){
+                $('.form').removeClass('stage-1 stage-2 stage-3 stage-5');
+                $('.form').addClass('stage-4');
+            });
+
+            $('.form-box-4 .form-admin-next').on('click', function(){
+                $('.form').removeClass('stage-1 stage-2 stage-3 stage-4');
+                $('.form').addClass('stage-5');
+            });
+
+            $('.form-box-1 .form-admin-skip').on('click', function(){
+                $('.form').removeClass('stage-1 stage-2 stage-4 stage-5');
+                $('.form').addClass('stage-3');
+            });
+
+            $('.form-box-3 .form-admin-skip').on('click', function(){
+                $('.form').removeClass('stage-1 stage-2 stage-3 stage-5');
+                $('.form').addClass('stage-4');
+            });
+
+
+            setTimeout(function() {
+                layoutsize();
+            }, 2000);
+
+            $(window).on('resize', function(){
+                layoutsize();
+            });
+
+            function rangeSlider() {
+              let slider = document.querySelectorAll(".range-slider");
+              let range = document.querySelectorAll(".range-slider__range");
+              let value = document.querySelectorAll(".range-slider__value");
+
+              slider.forEach((currentSlider) => {
+                value.forEach((currentValue) => {
+                  let val = currentValue.previousElementSibling.getAttribute("value");
+                  currentValue.innerText = val;
+
+
+                });
+
+                range.forEach((elem) => {
+                  elem.addEventListener("input", (eventArgs) => {
+
+                    max = elem.max;
+                    va =  eventArgs.target.value;
+
+                    if (va*10 < max*10) {
+
+                        elem.nextElementSibling.innerText = eventArgs.target.value;
+                    } else {
+                        elem.nextElementSibling.innerText = eventArgs.target.value + '+';
+                    }
+                    
+                  });
+                });
+              });
+            }
+            rangeSlider();
+
+            function numberWithCommas(number) {
+                var parts = number.toString().split(".");
+                parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+                return parts.join(".");
+            }
+
+            $(document).on('click', '.form-box-1 .form-admin-next', function() {
+               value1 = $('#slider1').val() * 250;
+               value2 = $('#slider2').val() * 250;
+               value3 = $('#slider3').val() * 1000;
+               value4 = $('#slider4').val() * 250;
+
+                total = numberWithCommas(value1 + value2 + value3 + value4);
+               totalForm = '£' + total + '+';
+               console.log(totalForm);
+
+               $('#hw-total').text(totalForm);
+
+            });
+
+            $(document).on('change', '#slider1, #slider2, #slider3, #slider4', function() {
+               value1 = $('#slider1').val();
+               value2 = $('#slider2').val();
+               value3 = $('#slider3').val();
+               value4 = $('#slider4').val();
+               total = value1 + value2 + value3 + value4; 
+
+               if (total > 0) {
+                    $('.form-box-1 .form-admin-next').removeClass('disabled');
+               };
+
+            });
+
+
+            function isEmail(email) {
+              var regex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+              return regex.test(email);
+            }
+
+
+
+                $('.required').on('keyup', function(){
+                    var count = 0;
+                    var name = $('#input-name').val();
+                    var phone = $('#input-phone').val();
+                    var email = $('#input-email').val(); 
+
+                    if(isEmail(email)){
+                        count = count+1;
+                    }
+
+                    if(phone.length > 6){
+                        count = count+1;
+                    }
+
+                    if(name.length > 3){
+                        count = count+1;
+                    }
+
+                    console.log(count);
+
+                    if (count > 2) {
+                        $('.form-box-4 .form-admin-next').removeClass('disabled');
+                        console.log('unlocked');
+                    } else {
+                        $('.form-box-4 .form-admin-next').addClass('disabled');
+                        console.log('locked');
+                    }
+                });
+
+            });
+        </script>
+
+<!-- GOOGLE ANALYTICS -->
