@@ -1530,10 +1530,13 @@ input::-moz-focus-outer {
                 <script src="https://widget.reviews.io/badge-ribbon/dist.js"></script>
                 <a href=""><div id="badge-ribbon"></div></a>
                 <script>
+                    setTimeout(()=> {
                     reviewsBadgeRibbon("badge-ribbon", {
                         store: "rapid-it-ltd",
                         size: "small",
                         mono: false,
+                        }
+                        ,2000);
                     });
                 </script>
             </div>
