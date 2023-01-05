@@ -1902,7 +1902,7 @@ input::-moz-focus-outer {
                         count = count+1;
                     }
 
-                    if(phone.length > 6){
+                    if(phone.length > 6 && phone.match(/^\d+$/)){
                         count = count+1;
                     }
 
