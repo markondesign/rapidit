@@ -474,7 +474,26 @@ header .header .phone a:hover span {
 }
 .form .form-box-inner p {
    color: #ffffff;
+  line-height: inherit;
+  letter-spacing: inherit;
+  margin-bottom: 10px;
 } 
+ 
+.form .form-box-inner h2 {
+   color: #ffffff;
+  line-height: inherit;
+  letter-spacing: inherit;
+  margin-bottom: 10px;
+  font-size: 32px;
+  font-weight: 700;
+} 
+
+  @media only screen and (max-width: 1024px) {
+  .form .form-box-inner h2 {
+    font-size: 24px;
+  }
+}
+ 
 .form .form-box-inner input[type="text"],
 .form .form-box-inner input[type="phone"],
 .form .form-box-inner input[type="email"],
