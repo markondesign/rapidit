@@ -1,6 +1,7 @@
 <style>
 
 /* == WEB FONT IMPORT == */
+  
 @font-face {
   font-family: 'Overpass';
   font-style: italic;
@@ -63,6 +64,7 @@ a,
   -o-transition: all 0.5s ease;
   transition: all 0.5s ease;
   text-decoration: none;
+  font-weight: 500;
 }
 .balls {
   z-index: 1;
@@ -661,6 +663,7 @@ header .header .phone a:hover span {
 .hero-inner h1 {
   font-size: 55px;
   line-height: 60px;
+  margin-bottom: revert;
 }
 @media only screen and (max-width: 1200px) {
   .hero-inner h1 {
@@ -684,6 +687,8 @@ header .header .phone a:hover span {
   font-size: 20px;
   line-height: 26px;
   margin-bottom: 40px;
+  letter-spacing: initial;
+  font-family: 'Overpass', sans-serif;
 }
 @media only screen and (max-width: 768px) {
   .hero-inner p {
