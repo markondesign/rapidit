@@ -1536,6 +1536,11 @@ input::-moz-focus-outer {
 
 
                     <div class="form-admin">
+                      <div class="form-buttons">
+                        <div class="form-admin-prev">
+                            Back
+                        </div>
+                        </div>
                         <div class="form-admin-pagination">
                             <strong>Step 4</strong> of 4
                         </div>
@@ -1826,6 +1831,11 @@ input::-moz-focus-outer {
             $('.form-box-4 .form-admin-next').on('click', function(){
                 $('.form').removeClass('stage-1 stage-2 stage-3 stage-4');
                 $('.form').addClass('stage-5');
+            });
+              
+              $('.form-box-4 .form-admin-prev').on('click', function(){
+                $('.form').removeClass('stage-1 stage-2 stage-5 stage-4');
+                $('.form').addClass('stage-3');
             });
 
             $('.form-box-1 .form-admin-skip').on('click', function(){
