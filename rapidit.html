@@ -585,7 +585,7 @@ header .header .phone a:hover span {
 .form .form-admin .form-buttons .form-admin-skip:hover {
   color: #58ACD4;
 }
-.form .form-admin .form-buttons .form-admin-next {
+.form .form-admin .form-buttons .form-admin-next, .form .form-admin .form-buttons .form-admin-prev {
   display: inline-block;
   padding: 10px 15px;
   border-radius: 5px;
@@ -593,11 +593,11 @@ header .header .phone a:hover span {
   cursor: pointer;
   transition: all 0.5s ease;
 }
-.form .form-admin .form-buttons .form-admin-next:hover {
+.form .form-admin .form-buttons .form-admin-next:hover, .form .form-admin .form-buttons .form-admin-prev:hover {
   color: #58ACD4;
   background: #FFFFFF;
 }
-.form .form-admin .form-buttons .form-admin-next.disabled {
+.form .form-admin .form-buttons .form-admin-next.disabled, .form .form-admin .form-buttons .form-admin-prev.disabled {
   opacity: 0.4;
   pointer-events: none;
 }
@@ -1807,10 +1807,20 @@ input::-moz-focus-outer {
                 $('.form').removeClass('stage-1 stage-2 stage-4 stage-5');
                 $('.form').addClass('stage-3');
             });
+              
+             $('.form-box-2 .form-admin-prev').on('click', function(){
+                $('.form').removeClass('stage-3 stage-2 stage-4 stage-5');
+                $('.form').addClass('stage-1');
+            });
 
             $('.form-box-3 .form-admin-next').on('click', function(){
                 $('.form').removeClass('stage-1 stage-2 stage-3 stage-5');
                 $('.form').addClass('stage-4');
+            });
+              
+              $('.form-box-3 .form-admin-prev').on('click', function(){
+                $('.form').removeClass('stage-1 stage-4 stage-3 stage-5');
+                $('.form').addClass('stage-2');
             });
 
             $('.form-box-4 .form-admin-next').on('click', function(){
